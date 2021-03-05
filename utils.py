@@ -3,6 +3,9 @@
 #===============================================================================================================================
 import re
 #Formats the phone informed to the international standard
+# 'people'-'required'-> Person who will have their phone formatted 
+# 'nameItem'-'required'-> index of the list that the phone is
+# 'nameNewItem'-'required'-> index where the phone will be
 def formatPhone(people, nameItem, nameNewItem):
   if nameItem in people:
     try:
@@ -21,19 +24,19 @@ def removeItem(lst, nameItem):
     pass
 
 # Paging the data informed according to the parameters informed
-# 'date' -> the list that will be paged
-# 'page_size' -> number of items per page
-# 'page' -> of the current page
+# 'date'-'required'-> the list that will be paged
+# 'page_size'-'required'->  number of items per page
+# 'page'-'required'->  of the current page
 def paginate(data, page_size, page): 
   if data and page_size and page:
-    paginated = [data[i:i+page_size] for i in range(0, len(data), page_size)]
+    paginated = [ data [ i:i + page_size] for i in range(0, len(data), page_size)]
     # Valid if the reported page is valid if it does not redirect to the first page
     if len(paginated) <= page -1 or page < 1:
       page = 1
       print('The reported page does not exist, you will be redirected to the page 1.')
     #  Select the itens from the current page
     selected_itens = paginated[page -1]
-  return {"page": page,
+  return  { "page": page,
             "page_size": page_size,
             "total_itens": len(data),
             "total_pages": len(paginated),

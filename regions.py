@@ -40,3 +40,7 @@ def list_regions_and_state():
             ["norte", "amapá"], 
             ["norte", "roraima"] 
           ]
+#Returns a list of regions 
+def list_regions():
+  return  [ "sul", "sudeste", "centro-oeste", "nordeste", "norte" ]
+
