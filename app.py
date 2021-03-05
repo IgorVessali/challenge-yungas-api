@@ -1,3 +1,7 @@
+#===============================================================================================================================
+#   File with functions to start the project and create the routes
+#===============================================================================================================================
+
 from flask import Flask, request
 from database import formated_data
 from regions import list_regions
