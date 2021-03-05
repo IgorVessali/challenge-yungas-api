@@ -4,10 +4,10 @@
 
 # Returns the region corresponding to the reported state
 # 'state' -> Name of the state you want to search for
-def searchRegions(state):
+def findRegion(state):
   regions = list_regions_and_state()
-  ret_region = [ x[0] for x in regions if state in x]
-  return ret_region[0]
+  region = [ x[0] for x in regions if state in x]
+  return region[0]
 
 # Returns the list of states and their region
 def list_regions_and_state():

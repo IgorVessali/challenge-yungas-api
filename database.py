@@ -1,7 +1,8 @@
 #===============================================================================================================================
 #   File with all data functions
 #===============================================================================================================================
-from regions import searchRegions
+from regions import findRegion
+from utils import *
 
 # function that carries out the processing of the data as requested in the challenge
 def formated_data():
@@ -10,7 +11,15 @@ def formated_data():
   for people in data:
     people['gender'] = people['gender'][0:1]
     people["nationality"]= "BR"
-    people['location']['region'] = searchRegions(people['location']['state'])
+    people['location']['region'] = findRegion(people['location']['state'])
+    
+    formatPhone(people,'phone','telephoneNumbers')
+    formatPhone(people, 'cell','mobileNumbers')
+
+    removeItem(people['dob'], 'age')
+    removeItem(people['registered'], 'age')
+    removeItem(people, 'cell')
+    removeItem(people, 'phone')
 
     ret.append(people)
   return ret
