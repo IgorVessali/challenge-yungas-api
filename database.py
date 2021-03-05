@@ -1,7 +1,7 @@
 #===============================================================================================================================
 #   File with all data functions
 #===============================================================================================================================
-
+from regions import searchRegions
 
 # function that carries out the processing of the data as requested in the challenge
 def formated_data():
@@ -10,7 +10,8 @@ def formated_data():
   for people in data:
     people['gender'] = people['gender'][0:1]
     people["nationality"]= "BR"
-    
+    people['location']['region'] = searchRegions(people['location']['state'])
+
     ret.append(people)
   return ret
 
