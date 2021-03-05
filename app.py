@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
-from database import database
+from database import formated_data
 
-peoples_db = database()
+peoples_db = formated_data()
 app = Flask(__name__) 
 
 # Creates the end-poit that returns the index to API
