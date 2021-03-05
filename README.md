@@ -36,3 +36,8 @@ python app.py
 
 Navigate to [localhost:5000](http://127.0.0.1:5000/) and see the project running.
 
+Run the tests...
+
+```bash
+pytest  
+```

@@ -17,6 +17,8 @@ def formatPhone(people, nameItem, nameNewItem):
       print(e)
 
 # Removes the index from the list according to the parameters reported
+# 'lst'-'required'-> the list with the data
+# 'nameItem'-'required'-> index to be deleted
 def removeItem(lst, nameItem):
   try:
     if nameItem in lst: lst.pop(nameItem)
