@@ -19,3 +19,23 @@ def removeItem(lst, nameItem):
     if nameItem in lst: lst.pop(nameItem)
   except:
     pass
+
+# Paging the data informed according to the parameters informed
+# 'date' -> the list that will be paged
+# 'page_size' -> number of items per page
+# 'page' -> of the current page
+def paginate(data, page_size, page): 
+  if data and page_size and page:
+    paginated = [data[i:i+page_size] for i in range(0, len(data), page_size)]
+    # Valid if the reported page is valid if it does not redirect to the first page
+    if len(paginated) <= page -1 or page < 1:
+      page = 1
+      print('The reported page does not exist, you will be redirected to the page 1.')
+    #  Select the itens from the current page
+    selected_itens = paginated[page -1]
+  return {"page": page,
+            "page_size": page_size,
+            "total_itens": len(data),
+            "total_pages": len(paginated),
+            "itens": selected_itens
+          }
