@@ -2,6 +2,7 @@
 #   File with all shared functions
 #===============================================================================================================================
 import re
+from flask import json, Response
 #Formats the phone informed to the international standard
 # 'people'-'required'-> Person who will have their phone formatted 
 # 'nameItem'-'required'-> index of the list that the phone is
@@ -38,9 +39,12 @@ def paginate(data, page_size, page):
       print('The reported page does not exist, you will be redirected to the page 1.')
     #  Select the itens from the current page
     selected_itens = paginated[page -1]
-  return  { "page": page,
-            "page_size": page_size,
-            "total_itens": len(data),
-            "total_pages": len(paginated),
-            "itens": selected_itens
-          }
+    json_data = {"page": page,
+                  "page_size": page_size,
+                  "total_itens": len(data),
+                  "total_pages": len(paginated),
+                  "itens": selected_itens}
+    json_string = json.dumps(json_data, indent=2, ensure_ascii = False)
+    #creating a Response object to set the content type and the encoding
+    response = Response(json_string, content_type="application/json; charset=utf-8" )
+    return response

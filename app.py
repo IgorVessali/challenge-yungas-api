@@ -2,7 +2,7 @@
 #   File with functions to start the project and create the routes
 #===============================================================================================================================
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from database import formated_data
 from regions import list_regions
 from utils import paginate
