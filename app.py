@@ -2,7 +2,7 @@
 #   File with functions to start the project and create the routes
 #===============================================================================================================================
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 from database import formated_data
 from regions import list_regions
 from utils import paginate
@@ -15,7 +15,7 @@ app = Flask(__name__)
 # Creates the end-poit that returns the index to API
 @app.route('/')
 def index():
-  return '<h1> Code Challenger Yungas</h1> <br> <h3>by: Igor Vessali </h3>'
+  return render_template('index.html') 
 
 # Creates the end-point that returns a list of all people
 # 'page_size'-'optional'-> number of items on the page
