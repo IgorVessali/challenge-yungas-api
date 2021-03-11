@@ -12,7 +12,7 @@ Clone the project...
 
 ```bash
 git clone https://github.com/IgorVessali/challenge-yungas-api.git 
-cd challenge-yungas
+cd challenge-yungas-api
 ```
 
 Create and activate the virtualenv...
