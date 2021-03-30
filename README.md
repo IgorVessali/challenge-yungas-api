@@ -1,6 +1,4 @@
-# Challenge Yungas
-
-This is a [Yungas](https://www.yungas.com.br/) challenge API project.
+# POC API Flask
 
 Follow the steps below to run the project locally
 
