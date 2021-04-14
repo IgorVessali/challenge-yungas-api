@@ -9,8 +9,8 @@ Follow the steps below to run the project locally
 Clone the project...
 
 ```bash
-git clone https://github.com/IgorVessali/challenge-yungas-api.git 
-cd challenge-yungas-api
+git clone https://github.com/IgorVessali/poc-api-flask.git 
+cd poc-api-flask
 ```
 
 Create and activate the virtualenv...
